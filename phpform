@@ -1,0 +1,21 @@
+<html>
+ <head>
+  <title>php form</title>
+ </head>
+ <body>
+  <form>
+  What is your name?<br>
+  <input type="text" name="field1"><br>
+    <input type="text" name="field2"><br>
+   <input type="submit" value="Submit">
+  </form>
+
+ <?php
+$txt= $_POST['field1'].' - '.$_POST['field2']; 
+$var_str3 = var_export($txt, true);        //is this necessary?
+$var3 = "$var_str3";                       //is this necessary? 
+file_put_contents('fields.txt', $var3.PHP_EOL, FILE_APPEND);
+?>
+
+ </body>
+    </html>
